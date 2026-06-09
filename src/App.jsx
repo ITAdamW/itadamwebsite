@@ -12,6 +12,14 @@ const services = [
   },
   {
     number: '02',
+    title: 'ERP',
+    description:
+      'Wdrażam systemy workflow do elektronicznego obiegu dokumentów, rozwiązania BI oraz raportowanie oparte na SQL.',
+    tags: ['ERP', 'Workflow', 'BI', 'SQL'],
+    icon: 'database',
+  },
+  {
+    number: '03',
     title: 'Automatyzacje IT',
     description:
       'Narzędzia, integracje i procesy, które oszczędzają czas oraz porządkują codzienną pracę.',
@@ -19,7 +27,7 @@ const services = [
     icon: 'network',
   },
   {
-    number: '03',
+    number: '04',
     title: 'Zdjęcia z drona',
     description:
       'Dynamiczne ujęcia z powietrza dla nieruchomości, turystyki, wydarzeń i marek.',
@@ -80,6 +88,15 @@ function Icon({ name }) {
         <rect x="3" y="4" width="6" height="5" rx="1" />
         <rect x="15" y="15" width="6" height="5" rx="1" />
         <path d="M9 6.5h3a4 4 0 0 1 4 4V15M15 17.5h-3a4 4 0 0 1-4-4V9" />
+      </svg>
+    )
+  }
+
+  if (name === 'database') {
+    return (
+      <svg {...common}>
+        <ellipse cx="12" cy="5" rx="7" ry="3" />
+        <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
       </svg>
     )
   }
@@ -186,7 +203,7 @@ function App() {
               <a className="button button-ghost" href="#contact">Porozmawiajmy</a>
             </div>
             <div className="hero-meta">
-              <div><strong>03+</strong><span>obszary działania</span></div>
+              <div><strong>04+</strong><span>obszary działania</span></div>
               <div><strong>100%</strong><span>indywidualnego podejścia</span></div>
               <div><strong>PL / EN</strong><span>zdalnie i lokalnie</span></div>
             </div>
@@ -222,6 +239,9 @@ function App() {
         <section className="ticker" aria-label="Zakres usług">
           <div>
             <span>WEB DEVELOPMENT</span><i>+</i>
+            <span>ERP & WORKFLOW</span><i>+</i>
+            <span>BUSINESS INTELLIGENCE</span><i>+</i>
+            <span>SQL</span><i>+</i>
             <span>UI DESIGN</span><i>+</i>
             <span>AUTOMATION</span><i>+</i>
             <span>DRONE PHOTO & VIDEO</span><i>+</i>
@@ -346,6 +366,8 @@ function App() {
   "role": "IT creator",
   "focus": [
     "web development",
+    "ERP & document workflow",
+    "business intelligence & SQL",
     "automation",
     "aerial content"
   ],
@@ -359,13 +381,15 @@ function App() {
             <h2>Ciekawość napędza<br /><span>każdy projekt.</span></h2>
             <p>
               Lubię łączyć logiczne myślenie z wizualnym wyczuciem. W IT szukam
-              prostych odpowiedzi na złożone problemy, a z dronem szukam kadrów,
-              których nie widać z ziemi.
+              prostych odpowiedzi na złożone problemy: od wdrożeń ERP, workflow
+              dokumentów i raportowania BI po aplikacje i automatyzacje. Z dronem
+              szukam kadrów, których nie widać z ziemi.
             </p>
             <div className="about-values">
               <span>01. Konkret</span>
-              <span>02. Estetyka</span>
-              <span>03. Niezawodność</span>
+              <span>02. Procesy i dane</span>
+              <span>03. Estetyka</span>
+              <span>04. Niezawodność</span>
             </div>
           </div>
         </section>
