@@ -142,12 +142,40 @@
   text-transform: uppercase;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 10px;
+}
+
 .header-cta svg,
 .button svg,
 .text-link svg,
 .contact-mail svg {
   width: 18px;
   height: 18px;
+}
+
+.theme-button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--cyan);
+  background: rgba(54, 241, 255, 0.035);
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.theme-button:hover {
+  border-color: var(--cyan);
+  background: rgba(54, 241, 255, 0.08);
+}
+
+.theme-button svg {
+  width: 19px;
+  height: 19px;
 }
 
 .menu-button {
@@ -1398,6 +1426,299 @@ footer > a:last-child:hover {
 
 @keyframes ticker {
   to { transform: translateX(-50%); }
+}
+
+body[data-theme='light'] .site-shell {
+  color: #29162a;
+  background-color: #fffafd;
+  background-image:
+    linear-gradient(rgba(210, 33, 132, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 33, 132, 0.045) 1px, transparent 1px);
+}
+
+body[data-theme='light'] .site-header {
+  border-color: rgba(185, 33, 119, 0.18);
+  background: rgba(255, 250, 253, 0.88);
+  box-shadow: 0 10px 40px rgba(132, 20, 83, 0.06);
+}
+
+body[data-theme='light'] .logo-mark {
+  border-color: rgba(218, 29, 135, 0.55);
+  color: #d21f84;
+  background: rgba(255, 60, 172, 0.07);
+}
+
+body[data-theme='light'] .logo-mark::after {
+  border-color: #15a7bd;
+}
+
+body[data-theme='light'] .logo-copy strong {
+  color: #241525;
+}
+
+body[data-theme='light'] .logo-copy small,
+body[data-theme='light'] .hero-meta span,
+body[data-theme='light'] .section-heading > p,
+body[data-theme='light'] .service-card > p,
+body[data-theme='light'] .project-info > p:not(.project-type),
+body[data-theme='light'] .about-copy > p:not(.section-index),
+body[data-theme='light'] .contact-panel > p {
+  color: #765f73;
+}
+
+body[data-theme='light'] .main-nav a {
+  color: #6b5368;
+}
+
+body[data-theme='light'] .main-nav a:hover,
+body[data-theme='light'] .section-index,
+body[data-theme='light'] .hero-kicker,
+body[data-theme='light'] .project-type,
+body[data-theme='light'] .text-link,
+body[data-theme='light'] .contact-mail,
+body[data-theme='light'] .social-links a:hover {
+  color: #d21f84;
+}
+
+body[data-theme='light'] .main-nav a::after {
+  background: #ff3cac;
+}
+
+body[data-theme='light'] .header-cta {
+  border-color: rgba(210, 31, 132, 0.48);
+  color: #c21879;
+  background: rgba(255, 60, 172, 0.04);
+}
+
+body[data-theme='light'] .theme-button,
+body[data-theme='light'] .menu-button {
+  border-color: rgba(210, 31, 132, 0.24);
+  color: #d21f84;
+  background: rgba(255, 60, 172, 0.055);
+}
+
+body[data-theme='light'] .hero-section,
+body[data-theme='light'] .section,
+body[data-theme='light'] .drone-section,
+body[data-theme='light'] .contact-section,
+body[data-theme='light'] .ticker {
+  border-color: rgba(185, 33, 119, 0.17);
+}
+
+body[data-theme='light'] .hero-section {
+  background:
+    radial-gradient(circle at 80% 38%, rgba(255, 60, 172, 0.09), transparent 28rem),
+    transparent;
+}
+
+body[data-theme='light'] .eyebrow {
+  border-color: rgba(210, 31, 132, 0.2);
+  color: #8f376c;
+  background: rgba(255, 60, 172, 0.05);
+}
+
+body[data-theme='light'] .status-dot {
+  background: #ff3cac;
+  box-shadow: 0 0 14px rgba(255, 60, 172, 0.72);
+}
+
+body[data-theme='light'] .hero-copy h1,
+body[data-theme='light'] .section-heading h2,
+body[data-theme='light'] .drone-content h2,
+body[data-theme='light'] .about-copy h2,
+body[data-theme='light'] .contact-section h2,
+body[data-theme='light'] .service-card h3,
+body[data-theme='light'] .project-info h3,
+body[data-theme='light'] .hero-meta strong {
+  color: #241525;
+}
+
+body[data-theme='light'] .hero-copy h1 span,
+body[data-theme='light'] .section-heading h2 span,
+body[data-theme='light'] .drone-content h2 span,
+body[data-theme='light'] .about-copy h2 span,
+body[data-theme='light'] .contact-section h2 span {
+  -webkit-text-stroke-color: rgba(210, 31, 132, 0.78);
+}
+
+body[data-theme='light'] .hero-lead {
+  color: #745f71;
+}
+
+body[data-theme='light'] .button-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff3cac, #d21f84);
+  box-shadow: 0 12px 30px rgba(210, 31, 132, 0.18);
+}
+
+body[data-theme='light'] .button-ghost {
+  border-color: rgba(185, 33, 119, 0.2);
+  color: #6d4765;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+body[data-theme='light'] .hero-glow-one {
+  background: rgba(255, 60, 172, 0.16);
+}
+
+body[data-theme='light'] .hero-glow-two {
+  background: rgba(54, 241, 255, 0.12);
+}
+
+body[data-theme='light'] .orbit,
+body[data-theme='light'] .drone-core,
+body[data-theme='light'] .drone-ring {
+  border-color: rgba(210, 31, 132, 0.18);
+}
+
+body[data-theme='light'] .orbit::after {
+  background: #ff3cac;
+  box-shadow: 0 0 14px #ff3cac;
+}
+
+body[data-theme='light'] .drone-core {
+  background: radial-gradient(circle, rgba(255, 60, 172, 0.09), transparent 60%);
+}
+
+body[data-theme='light'] .drone-body {
+  border-color: rgba(210, 31, 132, 0.8);
+  background: linear-gradient(145deg, rgba(255, 60, 172, 0.2), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 0 24px rgba(255, 60, 172, 0.18);
+}
+
+body[data-theme='light'] .drone-body::before,
+body[data-theme='light'] .drone-body::after,
+body[data-theme='light'] .scan-line {
+  background: #ff3cac;
+}
+
+body[data-theme='light'] .rotor {
+  border-top-color: #d21f84;
+  border-bottom-color: rgba(210, 31, 132, 0.28);
+}
+
+body[data-theme='light'] .hud-card {
+  border-color: rgba(185, 33, 119, 0.2);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 12px 32px rgba(132, 20, 83, 0.08);
+}
+
+body[data-theme='light'] .hud-card strong {
+  color: #d21f84;
+}
+
+body[data-theme='light'] .ticker {
+  color: #846a7f;
+  background: rgba(255, 60, 172, 0.035);
+}
+
+body[data-theme='light'] .service-card,
+body[data-theme='light'] .project-card,
+body[data-theme='light'] .contact-panel {
+  border-color: rgba(185, 33, 119, 0.17);
+  background:
+    linear-gradient(145deg, rgba(255, 60, 172, 0.045), transparent 44%),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 50px rgba(121, 25, 79, 0.055);
+}
+
+body[data-theme='light'] .service-card:hover {
+  border-color: rgba(210, 31, 132, 0.55);
+}
+
+body[data-theme='light'] .service-card::after {
+  border-color: #ff3cac;
+}
+
+body[data-theme='light'] .service-icon {
+  border-color: rgba(210, 31, 132, 0.25);
+  color: #d21f84;
+  background: rgba(255, 60, 172, 0.055);
+}
+
+body[data-theme='light'] .tag-list span,
+body[data-theme='light'] .about-values span {
+  border-color: rgba(185, 33, 119, 0.17);
+  color: #806276;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+body[data-theme='light'] .project-visual {
+  border-color: rgba(185, 33, 119, 0.17);
+  background:
+    linear-gradient(rgba(210, 31, 132, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 31, 132, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(255, 60, 172, 0.09), #fff7fb 68%);
+  background-size: 36px 36px, 36px 36px, auto;
+}
+
+body[data-theme='light'] .terminal-ui {
+  border-color: rgba(210, 31, 132, 0.25);
+  color: #775e71;
+  background: rgba(255, 250, 253, 0.88);
+  box-shadow: 20px 20px 0 rgba(255, 60, 172, 0.04);
+}
+
+body[data-theme='light'] .terminal-ui .success {
+  color: #d21f84;
+}
+
+body[data-theme='light'] .project-footer button {
+  border-color: rgba(185, 33, 119, 0.2);
+  color: #d21f84;
+  background: rgba(255, 60, 172, 0.04);
+}
+
+body[data-theme='light'] .drone-section {
+  background: #fff7fb;
+}
+
+body[data-theme='light'] .drone-backdrop {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 253, 0.98) 0%, rgba(255, 250, 253, 0.78) 44%, rgba(255, 250, 253, 0.15) 100%),
+    linear-gradient(180deg, #d8eff4 0%, #f0c8df 42%, #ff87bd 58%, #90aeb5 59%);
+}
+
+body[data-theme='light'] .drone-content > p:not(.section-index) {
+  color: #715c6d;
+}
+
+body[data-theme='light'] .flight-data div {
+  border-color: rgba(185, 33, 119, 0.17);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+body[data-theme='light'] .flight-data strong {
+  color: #d21f84;
+}
+
+body[data-theme='light'] .about-code {
+  border-color: rgba(185, 33, 119, 0.18);
+  background: #fffafd;
+  box-shadow: 24px 24px 0 rgba(255, 60, 172, 0.035);
+}
+
+body[data-theme='light'] .code-bar {
+  border-color: rgba(185, 33, 119, 0.16);
+}
+
+body[data-theme='light'] .about-code code {
+  color: #624f60;
+}
+
+body[data-theme='light'] .contact-section {
+  background:
+    radial-gradient(circle at 20% 70%, rgba(255, 60, 172, 0.09), transparent 32%),
+    #fffafd;
+}
+
+body[data-theme='light'] footer {
+  color: #765f73;
+  background: #ffffff;
+}
+
+body[data-theme='light'] .main-nav.is-open {
+  background: rgba(255, 250, 253, 0.98);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+
+const THEME_STORAGE_KEY = 'itadamw-theme'
 
 const services = [
   {
@@ -126,6 +128,23 @@ function Icon({ name }) {
     )
   }
 
+  if (name === 'sun') {
+    return (
+      <svg {...common}>
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
+      </svg>
+    )
+  }
+
+  if (name === 'moon') {
+    return (
+      <svg {...common}>
+        <path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z" />
+      </svg>
+    )
+  }
+
   return (
     <svg {...common}>
       <path d="M18 6 6 18M8 6h10v10" />
@@ -149,8 +168,17 @@ function Logo() {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'dark'
+    return window.localStorage.getItem(THEME_STORAGE_KEY) || 'dark'
+  })
 
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    document.body.dataset.theme = theme
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+  }, [theme])
 
   return (
     <div className="site-shell">
@@ -162,19 +190,30 @@ function App() {
           <a href="#drone" onClick={closeMenu}>Drony</a>
           <a href="#about" onClick={closeMenu}>O mnie</a>
         </nav>
-        <a className="header-cta" href="#contact">
-          <span>Rozpocznij projekt</span>
-          <Icon name="arrow" />
-        </a>
-        <button
-          className="menu-button"
-          type="button"
-          onClick={() => setMenuOpen((current) => !current)}
-          aria-label="Otwórz menu"
-          aria-expanded={menuOpen}
-        >
-          <Icon name="menu" />
-        </button>
+        <div className="header-actions">
+          <button
+            className="theme-button"
+            type="button"
+            onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+            aria-label={theme === 'dark' ? 'Włącz jasny motyw' : 'Włącz ciemny motyw'}
+            title={theme === 'dark' ? 'Jasny motyw' : 'Ciemny motyw'}
+          >
+            <Icon name={theme === 'dark' ? 'moon' : 'sun'} />
+          </button>
+          <a className="header-cta" href="#contact">
+            <span>Rozpocznij projekt</span>
+            <Icon name="arrow" />
+          </a>
+          <button
+            className="menu-button"
+            type="button"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-label="Otwórz menu"
+            aria-expanded={menuOpen}
+          >
+            <Icon name="menu" />
+          </button>
+        </div>
       </header>
 
       <main>
